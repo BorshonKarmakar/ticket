@@ -1,1 +1,321 @@
-D:\My Computer\Web design\Fake railway ticket
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fake railway ticket maker.css">
+    <link rel="website icon" type="png" href="Screenshot 2024-07-26 154655.png">
+
+
+</head>
+<style>
+ .success{
+    text-align: center;
+    position: absolute;
+    top: 800px;
+    left: 35%;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    visibility: hidden;
+
+ }
+ @keyframes success {
+     0%{
+         visibility: visible;
+     }
+     50%{
+         visibility: visible;
+     }
+     100%{
+         visibility: visible;
+     }
+     
+ }
+ #sinfo{
+     animation-duration: 2s;
+     animation-iteration-count: 1;
+     color: rgb(126, 126, 15);
+     visibility: hidden;
+ }
+ @keyframes sinfo {
+     0%{
+         color: yellow;
+         visibility: visible;
+     }
+     50%{
+         color: yellowgreen;
+         visibility: visible;
+     }
+     100%{
+         color: rgb(245, 221, 6);
+         visibility: visible;
+     }
+     
+ }
+
+</style>
+<body>
+    <div class="success">
+        <h1 id="sinfo">Successfully Submit your infomation.</h1>
+        <h2>Your ticket (<span class="from"></span> to <span class="to"></span>) will be ready soon.</h2>
+        <h2>Please wait........</h2>
+    </div>
+   <div class="page" id="pageee">
+       <img src="MY logo_.png" height="150px" width="200px" style="position: absolute; top: 0; left: 100px;" alt="">
+       <img src="Screenshot 2024-07-26 154739.png" class="bdr" alt="">
+       <div class="namepart">
+           <div style="margin-left:10px;" class="d-flex dear">
+               <p>Dear</p>
+               <p id="name" style="margin-left:10px;">name</p><p>,</p>
+           </div>
+           <div class="rq">
+               <p style="margin-left: 10px;">Your request to book e-ticket for your journey in Bangladesh Railway was successful. You can travel on the train mentioned in <br> the ticket subject to showing your NID or Photo ID card. The details of your w-ticket are as below:</p>
+               <p style="font-size: 14px; margin-left: 10px;">বাংলাদেশ রেলওয়েতে ভ্রমণের জন্য আপনার চাহিত ই-টিকিট সফলভাবে প্রদান করা হয়েছে। আপনার এনআইডি কিংবা ছবি সম্বলিত আইডি দেখানো সাপেক্ষে <br> আপনি টিকিটে বর্ণিত ট্রেনে যাত্রা করতে পারবেন। ই-টিকিটের বিস্তারিত নিম্নে দেওয়া হলোঃ-</p>
+           </div>
+           <div class="qr">
+               <img src="./Screenshot 2024-07-26 154620.png" alt="" height="150px" width="150px">
+           </div>
+           <div class="table">
+               <table>
+                   <tr>
+                       <th colspan="2" style="text-align: left; background-color: rgb(8,148,8); font-size: 25px; color: white;">Journey Information(যাত্রার তথ্য) </th>
+                   </tr>
+                   <tr>
+                       <td>Issue Date & Time(প্রদানের তারিখ ও সময়)</td>
+                       <td id="dtime">dtime</td>
+                       
+                   </tr>
+                   <tr>
+                       <td>Journey Date & Time(যাত্রায় তারিখ ও সময়) </td>
+                        <td id="jdtime">jdtime</td>
+                   </tr>
+                   <tr>
+                       <td>Train Name & Number(ট্রেনের নাম ও নম্বর)</td>
+                       <td style="display: flex; border: none;" id="tnum" style="text-transform: uppercase;"><span id="traineng"></span>[<span id="traincodee"></span>](<span id="trainban"></span>[<span id="traincodeb"></span>])</td>
+                
+                   </tr>
+                   <tr>
+                       <td>From Station(প্রারম্ভিক স্টেশন)</td>
+                       <td style="display: flex; border: none;" id="fstaion"><span id="fstatione"></span>(<span id="fstationb"></span>)</td>
+                   </tr>
+                   <tr>
+                       <td>To Station(গন্তব্য স্টেশন)</td>
+                       <td style="display: flex; border: none;" ><span id="tstatione"></span>(<span id="tstationb"></span>)</td>
+                   </tr>
+                   <tr>
+                       <td>Class Name(শ্রেণির নাম)</td>
+                       <td style="display: flex; border: none;" id="cname"><span id="cleng">c</span>( <span id="clban">c</span> )</td>
+                   </tr>
+                   <tr>
+                    <td>Coach Name/ Seat(s) (কোচের নাম/আসন)</td>
+                    <td id="chname" style="display: flex; border: none;"><span id="coeng">f</span>- <span id="seng">f</span> (<span id="coban">f</span> -<span id="sban">f</span>)</td>
+                   </tr>
+                   <tr>
+                       <td>No. of Seats(আসন সংখ্যা)</td>
+                       <td style="display: flex; border: none;" ><span id="numse">1</span>(<span id="numsb">১</span>)</td>
+                   </tr>
+                   <tr>
+                       <td>No. of Adult Passenger(s)(প্রাপ্তবয়স্ক যাত্রীর সংখ্যা)</td>
+                       <td style="display: flex; border: none;" ><span id="apnume">1</span>(<span id="apnumb">১</span>)</td>
+                   </tr>
+                   <tr>
+                       <td>No. of Child Passenger(S)(শিশু যাত্রীর সংখ্যা)</td>
+                       <td style="display: flex; border: none;" ><span id="cpnume">0</span>(<span id="cpnumb">০</span>)</td>
+                   </tr>
+                   <tr>
+                       <td>Fare(ভাড়া)</td>
+                       <td style="display: flex; border: none;" >BDT<span id="e"></span>.00 (<span id="b"></span>.০০ টাকা)</td>
+                   </tr>
+                   <tr>
+                       <td>VAT(ভ্যাট)</td>
+                       <td style="display: flex; border: none;" >BDT<span id="vate"></span>.00 (<span id="vatb"></span>.০০ টাকা))</td>
+                   </tr>
+                   <tr>
+                       <td>Service Charge(সেবা খরচ)</td>
+                       <td style="display: flex; border: none;" >BDT<span id="schargee"></span>.00 (<span id="schargeb"></span>.০০ টাকা)</td>
+                   </tr>
+                   <tr>
+                       <td><b>Total Fare(মোট ভাড়া)**</b></td>
+                       <td style="display: flex; border: none;" ><b>BDT<span id="tchargee"></span>.00 (<span id="tchargeb"></span>.০০ টাকা)</b></td>
+                   </tr>
+                   <tr>
+                       <td colspan="2" style="font-size: 13px; padding: 4px 0px;">**Total Fare includes BDT 50 Bedding Charges per seat for AC_B and F_BERTH seat classes.(এসি_বি এবং এফ_বার্থ সিট ক্লাসে প্রতি সিটে মোট ভাড়ার সাথে ৳৫০ বেডিং চার্জ অন্তর্ভুক্ত)</td>
+                   </tr>
+               </table>
+           </div>
+           <div class="passenger">
+               <table>
+                   <tr>
+                       <th colspan="2" style="text-align: left; background-color: green; font-size: 25px; color: white;">Passenger Information(যাত্রীর তথ্য)</th>
+                   </tr>
+                   <tr>
+                       <td>Passenger Name(যাত্রীর নাম)</td>
+                       <td id="pesname" style="text-transform: uppercase;">pesname</td>
+                   </tr>
+                   <tr>
+                       <td>Identification Type(পরিচয়পত্র ধরণ)</td>
+                       <td style="display: flex; border: none;" ><span id="idtypee"></span>(<span id="idtypeb"></span>)</td>
+                   </tr>
+                   <tr>
+                       <td>Identification Number(পরিচয়পত্র নম্বর)</td>
+                       <td style="display: flex; border: none;" ><span id="idnume"></span>(<span id="idnumb"></span>)</td>
+                   </tr>
+                   <tr>
+                       <td>Mobile Number(মোবাইল নম্বর)</td>
+                       <td style="display: flex; border: none;" ><span id="mobnume"></span>(<span id="mobnumb"></span>)</td>
+                   </tr>
+                   <tr>
+                       <td>PNR Number(পিএনআর নম্বর)</td>
+                       <td style="display: flex; border: none;" id="pnr" ><b>ff</b></td>
+                   </tr>
+               </table>
+           </div>
+       </div>
+       <div class="last">
+           <img src="./Screenshot 2024-07-27 192431.png" height="200px" width="1020px" alt="">
+       </div>
+   </div>
+   <div class="formpart">
+       <div class="heading">
+           <h1>Welcome to Fake Railway Ticket Generator website.</h1>
+          <div class="war">
+            
+            <h3>Warning:</h3>          
+            <b>***This ticket is fake. If you want to travel on Bangladesh Railway by showing or with this ticket, it will be a offense. You can't travel on Bangladesh Railway with this ticket.***</b>
+
+          </div>
+        
+           
+       </div>
+       <div class="info">
+           <marquee behavior="" direction="">Give all information with accuraccy to create a new ticket</marquee>
+       </div>
+       <div class="input">
+           <h3>Give your information here(এখানে আপনার তথ্য দিন)</h3>
+           <div class="jatri">
+               <table>
+                
+                   <tr>
+                       <td>1.Issue Date & Time(ইংরেজি ও বাংলায়):</td>
+                       <td><input type="text" id="idt"  placeholder="Example: 30-07-2024 17:52 (৩০-০৭-২০২৪ ১৭ঃ৩২)" style="font-size: 13px;" required ></td>
+                   </tr>
+                  <tr>
+                      <td>2.Journey Date & Time(ইংরেজি ও বাংলায়):</td>
+                      <td><input type="text" id="journeydt"  placeholder="Example: 30-07-2024 17:52 (৩০-০৭-২০২৪ ১৭ঃ৩২)" style="font-size: 13px;" required ></td>  
+                  </tr>
+                  <tr>
+                      <td>3.Train Name(English): <input type="text" style="width: 300px;" id="trainnameenglish" required placeholder="Titumir Express"></td>
+                      <td>4.Train Name(বাংলা) <input type="text" style="width: 300px;" id="trainnamebangla" required placeholder="তিতুমীর এক্সপ্রেস"></td>
+                  </tr>
+                  <tr>
+                    <td>5.Train Code(English): <input type="text" style="width: 300px;" id="traincodeenglish" required ></td>
+                    <td>6.Train Code(বাংলা) <input type="text" style="width: 300px;" id="traincodebangla" required ></td>
+                </tr>
+                <tr>
+                    <td>7.From Station(English): <input type="text" style="width: 300px;" id="fromstationenglish" required ></td>
+                    <td>8.From Station(বাংলা) <input type="text" style="width: 300px;" id="fromstationbangla" required ></td>
+                </tr>
+                <tr>
+                    <td>9.To Station(English): <input type="text" style="width: 300px;" id="tostationenglish"></td>
+                    <td>10.To Station(বাংলা) <input type="text" style="width: 300px;" id="tostationbangla" required ></td>
+                </tr>
+                <tr>
+                     <td>12.Class Name</td>
+                     <td style="border: 2px solid orange; text-align: center; border-radius: 5px;">
+                         <button value="S_Chair" id="schair" onclick="schair()" >Shovon Chair</button>
+                         <button value="Shovon" id="shovon"  onclick="shovon()">Shovon
+                         </button>
+                         <button value="AC_Chair" id="acchair"  onclick="acchair()">AC Chair</button>
+                     </td>
+                </tr>
+                <tr>
+                    <td>13.Coach Name:</td>
+                    <td style="border: 2px solid orange; text-align: center; border-radius: 5px;">
+                        <button value="ক" id="ka" onclick="ka()">ক</button>
+                        <button value="খ" id="kha" onclick="kha()">খ</button>
+                        <button value="গ" id="ga" onclick="ga()">গ</button>
+                        <button value="ঘ" id="gha" onclick="gha()">ঘ</button>
+                        <button value="ঙ" id="uma" onclick="uma()">ঙ</button>
+                        <button value="চ" id="cha" onclick="cha()">চ</button>
+                        <button value="ছ" id="scha" onclick="scha()">ছ</button>
+                        <button value="জ" id="ja" onclick="ja()">জ</button>
+                        <button value="ঝ" id="jha" onclick="jha()">ঝ</button>
+                        <button value="ঞ" id="neo" onclick="neo()">ঞ</button>
+                        <button value="ট" id="ta" onclick="ta()">ট</button>
+                        <button value="ঠ" id="tha" onclick="tha()">ঠ</button>
+                    </td>
+                </tr><br><br>
+                <tr>
+                   <tr>
+                       <td>14.Seat Number(English): <input type="number" id="seatnumberenglish"></td>
+                       <td>15.Seat Number(বাংলা): <input type="text" id="seatnumberbangla"></td>
+                   </tr>
+                <tr>
+                    <td>16.Ticket Amount (English): <input type="text" id="amountenglish" placeholder="Only amonut."   required ></td>
+                    <td>17.Ticket Amount (বাংলা): <input type="text" id="amountbangla" placeholder="শুধুমাত্র টাকার পরিমান।" required ></td>
+                </tr>
+                <tr>
+                    <td>18.VAT(English): <input type="text" id="vatenglish" required placeholder="Only amonut." ></td>
+                    <td>19.VAT(বাংলা): <input type="text" id="vatbangla" required placeholder="শুধুমাত্র টাকার পরিমান।" ></td>
+                </tr>
+                <tr>
+                    <td>20.Service Charge (English): <input type="text" id="serviceenglish" placeholder="Only amonut." required ></td>
+                    <td>21.Service Charge (বাংলা): <input type="text" id="servicebangla" placeholder="শুধুমাত্র টাকার পরিমান।" required ></td>
+                </tr>
+                <tr>
+                    <td>22.Total Fare (English): <input type="text" id="totalenglish" placeholder="Only amonut." required ></td>
+                    <td>23.Total Fare (বাংলা): <input type="text" id="totalbangla" required placeholder="শুধুমাত্র টাকার পরিমান।" ></td>
+                </tr>
+
+
+                
+               </table>
+               <h3>Passenger Information (যাত্রীর তথ্য)</h3>
+               <table>
+                   <tr>
+                       <td>1.Passenger Name (English):</td>
+                       <td><input type="text" id="passnameenglish" required ></td>
+                   </tr>
+                   <tr>
+                       <td>2.Identification Type (English): <select name="idtype" id="idtypeenglish">
+                           <option value=""></option>
+                           <option value="NID">NID</option>
+                           <option value="Passport">Passport</option>
+                           <option value="Birth Cetificate">Birth Cetificate</option>
+                       </select></td>
+                       <td>3.Identification Type (বাংলা): <select name="idtypebanga" id="idtypebangla">
+                           <option value=""></option>
+                           <option value="এনআইডি">এনআইডি</option>
+                           <option value="পাসপোর্ট">পাসপোর্ট</option>
+                           <option value="জন্মসনদ">জন্মসনদ</option>
+                       </select></td>
+                   </tr>
+                   <tr>
+                       <td>4.Identification Number (English): <input type="text" id="idnumberenglish" required></td>
+                       <td>5.Identification Number (বাংলা)ঃ <input type="text" id="idnumberbangla" required></td>
+                   </tr>
+                   <tr>
+                    <td><p style="color: red;" id="redmob"></p>
+                        6.Mobile Number (English): <input type="text" id="mobnumberenglish" maxlength="11" required></td>
+                    <td><p style="color: red;" id="remob"></p>
+                        7.Mobile Number (বাংলা)ঃ <input type="text" id="mobnumberbangla" maxlength="11" required></td>
+                </tr>
+
+            
+            
+               </table>
+               <button class="submit" onclick="submit()" type="submit">Submit</button>
+     
+
+        </div>
+       
+
+   </div>
+
+
+ 
+   
+    <script src="fake railway ticket maker.js"></script>
+</body>
+</html>
